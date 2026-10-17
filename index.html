@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J41Z0NHW20"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-J41Z0NHW20', { 'app_name': 'totonoe-biyori' });
+  </script>
+
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1abc9c">
+  <title>ととのえ日和</title>
+  <meta name="description" content="毎日続けられる身だしなみアプリ。朝・外出前・夜のチェックリスト、散髪や爪切りなどの周期ケア、外出前クイック点検、連続日数とカレンダーで清潔感を習慣にします。">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <meta property="og:title" content="ととのえ日和">
+  <meta property="og:description" content="身だしなみを、毎日すこしずつ。朝・外出前・夜のチェックと周期ケアで、清潔感を習慣にしよう。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://totonoe-biyori.vercel.app/ogp.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://totonoe-biyori.vercel.app/ogp.png">
+</head>
+<body>
+
+  <!-- ログイン画面 -->
+  <div id="login-screen" class="login-screen">
+    <div class="login-card">
+      <span class="login-card__logo"><svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="rotate(28 36 32.8)"><ellipse cx="36" cy="24.7" rx="11.7" ry="14.4"/><ellipse cx="36" cy="24.7" rx="6.8" ry="9.5"/><path d="M33.4 39.1 L34.3 43.6 H37.8 L38.7 39.1"/><rect x="33.3" y="43.6" width="5.4" height="12.6" rx="2.7"/></g><path d="M19 10.3 Q19.9 16.6 26.2 17.5 Q19.9 18.4 19 24.7 Q18.1 18.4 11.8 17.5 Q18.1 16.6 19 10.3 Z"/></svg></span>
+      <h1 class="login-card__title">ととのえ日和</h1>
+      <p class="login-card__tagline">身だしなみを、毎日すこしずつ。<br>朝・外出前・夜のチェックで清潔感を習慣に。</p>
+      <button id="btn-google-login" class="google-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+        Googleでログイン
+      </button>
+    </div>
+  </div>
+
+  <div id="app" class="hidden">
+    <header class="app-header">
+      <span class="app-header__brand"><svg width="28" height="28" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-7px"><g transform="rotate(28 36 32.8)"><ellipse cx="36" cy="24.7" rx="11.7" ry="14.4"/><ellipse cx="36" cy="24.7" rx="6.8" ry="9.5"/><path d="M33.4 39.1 L34.3 43.6 H37.8 L38.7 39.1"/><rect x="33.3" y="43.6" width="5.4" height="12.6" rx="2.7"/></g><path d="M19 10.3 Q19.9 16.6 26.2 17.5 Q19.9 18.4 19 24.7 Q18.1 18.4 11.8 17.5 Q18.1 16.6 19 10.3 Z"/></svg> ととのえ日和</span>
+      <nav class="app-header__nav">
+        <a href="about.html" class="app-header__about-link">アプリについて</a>
+        <div id="user-info" class="app-header__user hidden">
+          <img id="user-avatar" class="app-header__avatar" src="" alt="" />
+          <span id="user-name" class="app-header__name"></span>
+          <button id="btn-logout" class="btn btn--ghost btn--sm">ログアウト</button>
+        </div>
+      </nav>
+    </header>
+
+    <div class="tabs-bar">
+      <div class="tabs" role="tablist">
+        <button type="button" class="tabs__btn is-active" role="tab" data-tab="today" aria-selected="true">今日</button>
+        <button type="button" class="tabs__btn" role="tab" data-tab="periodic" aria-selected="false">周期ケア<span class="tabs__count" id="count-due"></span></button>
+        <button type="button" class="tabs__btn" role="tab" data-tab="record" aria-selected="false">きろく</button>
+        <button type="button" class="tabs__btn" role="tab" data-tab="items" aria-selected="false">項目</button>
+      </div>
+    </div>
+
+    <main class="app-main">
+
+      <!-- 今日 -->
+      <section class="panel" data-panel="today">
+        <div class="today card-surface">
+          <div class="today__head">
+            <div>
+              <p class="today__date" id="today-date"></p>
+              <h2 class="today__title">今日の身だしなみ</h2>
+            </div>
+            <div class="streak">
+              <span class="streak__num" id="streak-num">0</span>
+              <span class="streak__label">日連続</span>
+            </div>
+          </div>
+          <div class="progress">
+            <div class="progress__bar"><div class="progress__fill" id="progress-fill"></div><div class="progress__goal"></div></div>
+            <p class="progress__text" id="progress-text"></p>
+          </div>
+          <button type="button" id="btn-quick" class="quick-btn">
+            <svg width="22" height="22" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="12" width="36" height="44" rx="5"/><path d="M24 12 V8 H40 V12"/><path d="M23 34 L30 41 L42 28"/></svg>
+            外出前クイック点検
+          </button>
+        </div>
+
+        <div class="tip">
+          <span class="tip__label">今日のひとこと</span>
+          <p class="tip__text" id="tip-text"></p>
+        </div>
+
+        <div id="today-due" class="due-box hidden">
+          <h3 class="due-box__title">そろそろの周期ケア</h3>
+          <div id="today-due-list"></div>
+        </div>
+
+        <div id="today-groups"></div>
+
+        <div id="today-empty" class="empty-state card-surface hidden">
+          <p>まだチェック項目がありません。<br>よくある身だしなみ項目と周期ケアをまとめて追加できます。</p>
+          <button type="button" id="btn-seed" class="btn btn--primary btn--lg">おすすめの項目で始める</button>
+          <p class="empty-state__sub">あとから自由に編集・削除できます。自分で1つずつ追加するときは右下の「＋」から。</p>
+        </div>
+      </section>
+
+      <!-- 周期ケア -->
+      <section class="panel hidden" data-panel="periodic">
+        <div class="section__head">
+          <h2 class="section__title">周期ケア</h2>
+          <p class="section__desc">散髪や爪切りなど、間をあけてやるケアです。前回からの日数で「そろそろ」をお知らせします。</p>
+        </div>
+        <div id="periodic-list" class="periodic-list"></div>
+        <p id="periodic-empty" class="empty-state hidden">まだありません。右下の「＋」から追加できます。</p>
+      </section>
+
+      <!-- きろく -->
+      <section class="panel hidden" data-panel="record">
+        <div class="stat-row">
+          <div class="stat-card"><div class="stat-card__value" id="stat-streak">0</div><div class="stat-card__label">連続日数</div></div>
+          <div class="stat-card"><div class="stat-card__value" id="stat-best">0</div><div class="stat-card__label">最長連続</div></div>
+          <div class="stat-card"><div class="stat-card__value" id="stat-month">0</div><div class="stat-card__label">今月ととのった日</div></div>
+          <div class="stat-card"><div class="stat-card__value" id="stat-rate">0%</div><div class="stat-card__label">今月の平均チェック率</div></div>
+        </div>
+
+        <div class="calendar card-surface">
+          <div class="calendar__head">
+            <button type="button" id="btn-prev-month" class="calendar__nav" aria-label="前の月">‹</button>
+            <span class="calendar__title" id="calendar-title"></span>
+            <button type="button" id="btn-next-month" class="calendar__nav" aria-label="次の月">›</button>
+          </div>
+          <div class="calendar__week"><span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span></div>
+          <div id="calendar-grid" class="calendar__grid"></div>
+          <div class="calendar__legend">
+            <span><i class="lv lv--1"></i>少し</span>
+            <span><i class="lv lv--2"></i>半分以上</span>
+            <span><i class="lv lv--3"></i>ととのった日（7割以上）</span>
+          </div>
+          <p class="calendar__hint">日付をタップすると、その日のチェックを修正できます。</p>
+        </div>
+      </section>
+
+      <!-- 項目 -->
+      <section class="panel hidden" data-panel="items">
+        <div class="section__head">
+          <h2 class="section__title">毎日のチェック項目</h2>
+          <p class="section__desc">朝・外出前・夜に分けて、自分に必要な項目だけにしておくと続けやすくなります。</p>
+        </div>
+        <div id="items-groups"></div>
+        <button type="button" id="btn-add-item-inline" class="btn btn--ghost btn--block">＋ 項目を追加</button>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Yuji Nakamura. All rights reserved.</p>
+      <p><a href="https://apps.yuji-nakamura.com/" target="_blank" rel="noopener">他のアプリを見る →</a></p>
+    </footer>
+
+    <a href="about.html" class="about-btn"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="32" cy="32" r="20"/><circle cx="32" cy="22" r="1.5" fill="currentColor" stroke="none"/><line x1="32" y1="30" x2="32" y2="44"/></svg> アプリについて</a>
+    <button type="button" id="btn-fab" class="fab" aria-label="追加する"><svg width="24" height="24" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" aria-hidden="true"><path d="M32 12 V52"/><path d="M12 32 H52"/></svg></button>
+    <button id="feedback-btn" class="feedback-btn" aria-label="ご意見・ご要望"><svg width="22" height="22" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-6px"><rect x="8" y="14" width="48" height="30" rx="8"/><path d="M22 44 L14 54 V44"/></svg> ご意見</button>
+  </div>
+
+  <!-- 項目の追加・編集 -->
+  <div id="item-modal-overlay" class="dialog-overlay">
+    <form id="item-form" class="modal" novalidate>
+      <div class="modal__head">
+        <div class="modal__title" id="item-modal-title">項目を追加</div>
+        <button type="button" id="btn-item-close" class="modal__close" aria-label="閉じる">&times;</button>
+      </div>
+      <div class="field">
+        <label class="field__label" for="input-item-title">項目名</label>
+        <input type="text" id="input-item-title" maxlength="40" placeholder="例：リップクリーム" />
+      </div>
+      <div class="field">
+        <span class="field__label">タイミング</span>
+        <div id="item-timing" class="segmented" role="radiogroup"></div>
+      </div>
+      <div class="modal__actions">
+        <button type="button" id="btn-item-cancel" class="btn btn--ghost">キャンセル</button>
+        <button type="submit" id="btn-item-submit" class="btn btn--primary">保存する</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- 周期ケアの追加・編集 -->
+  <div id="periodic-modal-overlay" class="dialog-overlay">
+    <form id="periodic-form" class="modal" novalidate>
+      <div class="modal__head">
+        <div class="modal__title" id="periodic-modal-title">周期ケアを追加</div>
+        <button type="button" id="btn-periodic-close" class="modal__close" aria-label="閉じる">&times;</button>
+      </div>
+      <div class="field">
+        <label class="field__label" for="input-periodic-title">ケアの名前</label>
+        <input type="text" id="input-periodic-title" maxlength="40" placeholder="例：散髪" />
+      </div>
+      <div class="field">
+        <span class="field__label">どのくらいおきに？</span>
+        <div id="periodic-intervals" class="chips"></div>
+        <div class="inline-number">
+          <input type="number" id="input-periodic-interval" min="1" max="365" inputmode="numeric" />
+          <span>日おき</span>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field__label" for="input-periodic-last">最後にやった日<span class="field__hint">わからなければ空欄でOK</span></label>
+        <input type="date" id="input-periodic-last" />
+      </div>
+      <div class="modal__actions">
+        <button type="button" id="btn-periodic-cancel" class="btn btn--ghost">キャンセル</button>
+        <button type="submit" id="btn-periodic-submit" class="btn btn--primary">保存する</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- 日付の記録編集 / 外出前クイック点検 -->
+  <div id="check-modal-overlay" class="dialog-overlay">
+    <div class="modal">
+      <div class="modal__head">
+        <div>
+          <div class="modal__title" id="check-modal-title"></div>
+          <p class="modal__sub" id="check-modal-sub"></p>
+        </div>
+        <button type="button" id="btn-check-close" class="modal__close" aria-label="閉じる">&times;</button>
+      </div>
+      <div id="check-modal-body"></div>
+      <div class="modal__actions">
+        <button type="button" id="btn-check-done" class="btn btn--primary">閉じる</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 削除確認ダイアログ（カスタムUI） -->
+  <div id="confirm-dialog-overlay" class="dialog-overlay">
+    <div class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="confirm-dialog-title">
+      <div class="dialog__title" id="confirm-dialog-title">削除しますか？</div>
+      <div class="dialog__text" id="confirm-dialog-text">削除すると元に戻せません。</div>
+      <div class="dialog__actions">
+        <button type="button" id="btn-confirm-cancel" class="btn btn--ghost">キャンセル</button>
+        <button type="button" id="btn-confirm-ok" class="btn btn--danger">削除する</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 要望送信モーダル -->
+  <div id="feedback-modal-overlay" class="dialog-overlay">
+    <div class="modal">
+      <div class="modal__head">
+        <div class="modal__title">ご意見・ご要望</div>
+        <button type="button" id="btn-feedback-close" class="modal__close" aria-label="閉じる">&times;</button>
+      </div>
+      <textarea id="input-feedback-message" rows="5" maxlength="2000" placeholder="ご意見・ご要望・バグ報告など、なんでもどうぞ"></textarea>
+      <div class="modal__actions">
+        <button type="button" id="btn-feedback-send" class="btn btn--primary">送信する</button>
+      </div>
+      <p class="modal__note">送信内容は開発者に届きます。個人情報は入力しないでください。</p>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

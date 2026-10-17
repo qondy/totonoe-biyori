@@ -1,0 +1,21 @@
+{
+  "name": "totonoe-biyori",
+  "version": "1.0.0",
+  "private": true,
+  "description": "毎日続けられる身だしなみチェックと周期ケアのアプリ",
+  "scripts": {
+    "build:css": "sass src/scss/style.scss css/style.css --no-source-map --style=compressed",
+    "build:js": "esbuild src/ts/main.ts --bundle --minify --target=es2018 --format=iife --outfile=js/main.js",
+    "build": "npm run build:css && npm run build:js",
+    "dev": "npm run build:js && sass --watch src/scss/style.scss:css/style.css",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "sass": "^1.77.6",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "firebase": "^12.15.0"
+  }
+}

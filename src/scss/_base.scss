@@ -1,0 +1,425 @@
+// ===== Buttons =====
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xs;
+  padding: 10px 18px;
+  border-radius: $radius-md;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  transition: background 0.15s ease, transform 0.1s ease, color 0.15s ease;
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  &--primary {
+    background: $color-primary;
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background: $color-primary-hover;
+    }
+  }
+
+  &--ghost {
+    background: $color-surface-2;
+    color: $color-text;
+
+    &:hover:not(:disabled) {
+      background: $color-surface-3;
+    }
+
+    &.is-danger {
+      color: $color-danger;
+    }
+  }
+
+  &--danger {
+    background: $color-danger;
+    color: #fff;
+  }
+
+  &--block {
+    width: 100%;
+  }
+
+  &--sm {
+    padding: 6px 12px;
+    font-size: $font-size-xs;
+  }
+
+  &--lg {
+    padding: 14px 24px;
+    font-size: $font-size-base;
+  }
+}
+
+// ===== Login screen =====
+.login-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-lg;
+}
+
+.login-card {
+  background: $color-surface;
+  border-radius: $radius-lg;
+  padding: $spacing-2xl $spacing-xl;
+  text-align: center;
+  max-width: 360px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba($color-primary, 0.12);
+
+  &__logo {
+    display: block;
+    color: $color-primary;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__title {
+    font-size: $font-size-2xl;
+    font-weight: 800;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__tagline {
+    color: $color-text-muted;
+    font-size: $font-size-sm;
+    margin-bottom: $spacing-xl;
+    line-height: 1.7;
+  }
+}
+
+.google-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: $radius-md;
+  border: 1px solid $color-border;
+  background: #fff;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  color: $color-text;
+
+  &:hover {
+    background: $color-surface-2;
+  }
+}
+
+// ===== App header =====
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-sm;
+  padding: $spacing-md $spacing-lg;
+  background: $color-surface;
+  border-bottom: 1px solid $color-border;
+  flex-wrap: wrap;
+
+  &__brand {
+    font-size: $font-size-xl;
+    font-weight: 800;
+    color: $color-primary;
+    white-space: nowrap;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    margin-left: auto;
+  }
+
+  &__about-link {
+    font-size: $font-size-sm;
+    font-weight: 600;
+    color: $color-text-muted;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  &__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+
+  &__name {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    display: none;
+
+    @media (min-width: $bp-mobile) {
+      display: inline;
+    }
+  }
+}
+
+.app-main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: $spacing-lg $spacing-md $spacing-2xl;
+}
+
+.section {
+  margin-bottom: $spacing-xl;
+
+  &__head {
+    margin-bottom: $spacing-md;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: 800;
+  }
+
+  &__desc {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    margin-top: 3px;
+    line-height: 1.6;
+  }
+}
+
+.card-surface {
+  background: $color-surface;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: 0 2px 12px rgba($color-primary, 0.06);
+}
+
+.empty-state {
+  text-align: center;
+  padding: $spacing-xl $spacing-md;
+  color: $color-text-muted;
+  font-size: $font-size-sm;
+  line-height: 1.7;
+
+  &__icon {
+    font-size: 40px;
+    margin-bottom: $spacing-sm;
+  }
+}
+
+.field {
+  margin-bottom: $spacing-lg;
+
+  &__label {
+    display: block;
+    font-size: $font-size-sm;
+    font-weight: 700;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__hint {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    font-weight: 400;
+    margin-left: $spacing-xs;
+  }
+
+  input[type='text'],
+  textarea {
+    width: 100%;
+    padding: 10px $spacing-md;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    background: $color-surface;
+    font-size: $font-size-base;
+    color: $color-text;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 72px;
+    line-height: 1.6;
+  }
+}
+
+// ===== Dialog / Modal =====
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(30, 27, 46, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-md;
+
+  &.is-open {
+    display: flex;
+  }
+}
+
+.dialog {
+  background: $color-surface;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  max-width: 360px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: 800;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__text {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    margin-bottom: $spacing-lg;
+    line-height: 1.6;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: $spacing-sm;
+  }
+}
+
+.modal {
+  background: $color-surface;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  max-width: 480px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-md;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: 800;
+  }
+
+  &__close {
+    font-size: 22px;
+    color: $color-text-muted;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: $spacing-sm;
+    margin-top: $spacing-md;
+  }
+
+  &__note {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    margin-top: $spacing-xs;
+  }
+
+  textarea {
+    width: 100%;
+    padding: $spacing-sm;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    resize: vertical;
+    line-height: 1.6;
+  }
+}
+
+// ===== Feedback button =====
+.feedback-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  background: $color-primary;
+  color: #fff;
+  border-radius: 24px;
+  padding: 12px 20px;
+  font-size: $font-size-sm;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background: $color-primary-hover;
+  }
+}
+
+// ===== Footer =====
+.footer {
+  text-align: center;
+  padding: $spacing-lg $spacing-md;
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+
+  p {
+    margin-bottom: $spacing-xs;
+  }
+
+  a {
+    color: $color-text-muted;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+// ===== Utilities =====
+.hidden {
+  display: none !important;
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: $color-text;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: $font-size-sm;
+  z-index: 3000;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+  max-width: 90vw;
+  text-align: center;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

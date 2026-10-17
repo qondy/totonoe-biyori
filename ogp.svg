@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1abc9c"/>
+  <g transform="translate(600 240) scale(3.6) translate(-32 -32)" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><g transform="rotate(28 36 32.8)"><ellipse cx="36" cy="24.7" rx="11.7" ry="14.4"/><ellipse cx="36" cy="24.7" rx="6.8" ry="9.5"/><path d="M33.4 39.1 L34.3 43.6 H37.8 L38.7 39.1"/><rect x="33.3" y="43.6" width="5.4" height="12.6" rx="2.7"/></g><path d="M19 10.3 Q19.9 16.6 26.2 17.5 Q19.9 18.4 19 24.7 Q18.1 18.4 11.8 17.5 Q18.1 16.6 19 10.3 Z"/></g>
+  <text x="600" y="480" font-size="76" font-weight="600" text-anchor="middle" fill="#ffffff" font-family="-apple-system, 'Hiragino Sans', 'Noto Sans JP', sans-serif" letter-spacing="-2">ととのえ日和</text>
+</svg>

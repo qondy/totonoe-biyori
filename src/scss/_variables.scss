@@ -1,0 +1,46 @@
+// Colors — ターコイズ（清潔感のある水色みどり。OGPサムネイルと統一）
+$color-bg: #f4f8f7;
+$color-surface: #ffffff;
+$color-surface-2: #ecf3f1;
+$color-surface-3: #dce8e5;
+$color-primary: #1abc9c;
+$color-primary-hover: #16a085;
+$color-primary-ink: #117a65; // 白地の上で文字として使う濃いターコイズ（コントラスト確保）
+$color-danger: #dc2626;
+$color-text: #1d1d1f;
+$color-text-muted: #5f6668;
+$color-border: #e0e8e6;
+
+// タイミング・状態の識別色（primaryには追従させない）
+$color-morning: #d68910;
+$color-out: #2471a3;
+$color-night: #6c3483;
+$color-soon: #b9770e;
+$color-over: #c0392b;
+$color-achieve: #f1c40f;
+
+// Typography
+$font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+$font-size-xs: 12px;
+$font-size-sm: 13px;
+$font-size-base: 15px;
+$font-size-lg: 18px;
+$font-size-xl: 22px;
+$font-size-2xl: 28px;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-2xl: 48px;
+
+// Border radius
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 16px;
+
+// Breakpoints
+$bp-mobile: 480px;
+$bp-tablet: 768px;

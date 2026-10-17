@@ -1,0 +1,11 @@
+@import 'variables';
+@import 'reset';
+@import 'base';
+@import 'app';
+
+/* iOS Safari: inputへのフォーカス時の自動拡大を防ぐ(16px未満だと発生) */
+@media (max-width: 480px) {
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+}

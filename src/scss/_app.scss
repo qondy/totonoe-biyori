@@ -1,0 +1,727 @@
+.app-main {
+  padding-bottom: 160px;
+}
+
+// ===== Tabs =====
+.tabs-bar {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background: rgba($color-bg, 0.94);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid $color-border;
+}
+
+.tabs {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: $spacing-sm $spacing-md;
+  display: flex;
+  gap: $spacing-xs;
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__btn {
+    flex: 1 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 9px 14px;
+    border-radius: 999px;
+    font-size: $font-size-sm;
+    font-weight: 700;
+    color: $color-text-muted;
+    white-space: nowrap;
+
+    &:hover {
+      color: $color-primary-ink;
+    }
+
+    &.is-active {
+      background: $color-primary;
+      color: #fff;
+    }
+  }
+
+  &__count {
+    min-width: 20px;
+    padding: 1px 6px;
+    border-radius: 999px;
+    background: $color-over;
+    color: #fff;
+    font-size: $font-size-xs;
+
+    &:empty {
+      display: none;
+    }
+  }
+}
+
+// ===== Today =====
+.today {
+  margin-bottom: $spacing-md;
+
+  &__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: $spacing-md;
+    margin-bottom: $spacing-md;
+  }
+
+  &__date {
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    font-weight: 600;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 800;
+  }
+}
+
+.streak {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 72px;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-md;
+  background: $color-surface-2;
+
+  &__num {
+    font-size: $font-size-2xl;
+    font-weight: 800;
+    color: $color-primary-ink;
+    line-height: 1.1;
+  }
+
+  &__label {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    font-weight: 600;
+  }
+}
+
+.progress {
+  margin-bottom: $spacing-md;
+
+  &__bar {
+    position: relative;
+    height: 12px;
+    border-radius: 999px;
+    background: $color-surface-2;
+    overflow: hidden;
+  }
+
+  &__fill {
+    height: 100%;
+    width: 0;
+    border-radius: 999px;
+    background: $color-primary;
+    transition: width 0.25s ease;
+
+    &.is-achieved {
+      background: $color-primary-hover;
+    }
+  }
+
+  // 「ととのった日」の目安ライン（7割）
+  &__goal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 70%;
+    width: 2px;
+    background: rgba($color-text, 0.25);
+  }
+
+  &__text {
+    margin-top: $spacing-sm;
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    font-weight: 600;
+  }
+}
+
+.quick-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding: 12px $spacing-md;
+  border-radius: $radius-md;
+  border: 2px solid $color-primary;
+  color: $color-primary-ink;
+  font-size: $font-size-base;
+  font-weight: 700;
+  background: $color-surface;
+
+  &:hover:not(:disabled) {
+    background: $color-surface-2;
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+}
+
+.tip {
+  margin-bottom: $spacing-md;
+  padding: $spacing-md;
+  border-radius: $radius-lg;
+  background: $color-surface-2;
+  border-left: 4px solid $color-primary;
+
+  &__label {
+    display: block;
+    font-size: $font-size-xs;
+    font-weight: 700;
+    color: $color-primary-ink;
+    margin-bottom: 2px;
+  }
+
+  &__text {
+    font-size: $font-size-sm;
+    line-height: 1.7;
+  }
+}
+
+.due-box {
+  margin-bottom: $spacing-md;
+  padding: $spacing-md;
+  border-radius: $radius-lg;
+  background: #fff8ec;
+  border: 1px solid #f5d9a8;
+
+  &__title {
+    font-size: $font-size-base;
+    font-weight: 800;
+    color: $color-soon;
+    margin-bottom: $spacing-sm;
+  }
+}
+
+// ===== Check list =====
+.check-group {
+  background: $color-surface;
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  margin-bottom: $spacing-md;
+  box-shadow: 0 2px 12px rgba($color-primary, 0.06);
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__title {
+    font-size: $font-size-base;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    &::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+  }
+
+  &__count {
+    font-size: $font-size-sm;
+    font-weight: 700;
+    color: $color-text-muted;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &--morning &__title { color: $color-morning; }
+  &--out &__title { color: $color-out; }
+  &--night &__title { color: $color-night; }
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px $spacing-sm;
+  border-radius: $radius-md;
+  text-align: left;
+  font-size: $font-size-base;
+  color: $color-text;
+  transition: background 0.15s ease;
+
+  &:hover:not(:disabled) {
+    background: $color-surface-2;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: wait;
+  }
+
+  &__box {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    border: 2px solid $color-surface-3;
+    background: $color-surface;
+    position: relative;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+
+  &__label {
+    flex: 1;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+
+  &.is-done &__box {
+    background: $color-primary;
+    border-color: $color-primary;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 3px;
+      width: 6px;
+      height: 12px;
+      border: solid #fff;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+  }
+
+  &.is-done &__label {
+    color: $color-text-muted;
+    text-decoration: line-through;
+  }
+
+  &--lg {
+    min-height: 56px;
+    font-size: $font-size-lg;
+    font-weight: 600;
+    border: 1px solid $color-border;
+  }
+}
+
+// ===== Periodic =====
+.periodic-list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.periodic {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  background: $color-surface;
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  box-shadow: 0 2px 12px rgba($color-primary, 0.06);
+  border-left: 4px solid $color-surface-3;
+
+  &--ok { border-left-color: $color-primary; }
+  &--soon { border-left-color: $color-soon; }
+  &--over { border-left-color: $color-over; }
+
+  &--compact {
+    padding: 10px $spacing-sm;
+    box-shadow: none;
+    background: transparent;
+    border-left-width: 3px;
+    border-radius: 0;
+
+    & + & {
+      border-top: 1px solid #f5d9a8;
+    }
+  }
+
+  &__main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    font-size: $font-size-base;
+    font-weight: 700;
+    word-break: break-word;
+  }
+
+  &__status {
+    font-size: $font-size-sm;
+    font-weight: 700;
+    color: $color-primary-ink;
+    margin-top: 2px;
+
+    .periodic--soon & { color: $color-soon; }
+    .periodic--over & { color: $color-over; }
+    .periodic--none & { color: $color-text-muted; font-weight: 600; }
+  }
+
+  &__meta {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    margin-top: 2px;
+  }
+
+  &__bar {
+    margin-top: $spacing-sm;
+    height: 6px;
+    border-radius: 999px;
+    background: $color-surface-2;
+    overflow: hidden;
+  }
+
+  &__fill {
+    height: 100%;
+    background: $color-primary;
+    border-radius: 999px;
+
+    .periodic--soon & { background: $color-soon; }
+    .periodic--over & { background: $color-over; }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-shrink: 0;
+
+    .btn {
+      min-width: 76px;
+    }
+  }
+}
+
+// ===== Record =====
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+
+  @media (min-width: $bp-tablet) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-card {
+  background: $color-surface;
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba($color-primary, 0.06);
+
+  &__value {
+    font-size: $font-size-2xl;
+    font-weight: 800;
+    color: $color-primary-ink;
+  }
+
+  &__label {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    font-weight: 600;
+  }
+}
+
+.calendar {
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-md;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: 800;
+  }
+
+  &__nav {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: $color-text;
+    background: $color-surface-2;
+
+    &:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+  }
+
+  &__week,
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+  }
+
+  &__week {
+    margin-bottom: 4px;
+
+    span {
+      text-align: center;
+      font-size: $font-size-xs;
+      color: $color-text-muted;
+      font-weight: 700;
+    }
+  }
+
+  &__cell {
+    aspect-ratio: 1;
+    border-radius: $radius-sm;
+    font-size: $font-size-sm;
+    font-weight: 600;
+    color: $color-text;
+    background: $color-surface-2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.is-blank {
+      background: transparent;
+    }
+
+    &.is-today {
+      outline: 2px solid $color-text;
+      outline-offset: -2px;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+  }
+
+  &__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-md;
+    margin-top: $spacing-md;
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+
+    span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .lv {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+  }
+
+  &__hint {
+    margin-top: $spacing-sm;
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+  }
+}
+
+// チェック率の段階（ヒートマップ。最高段階はブランドカラー）
+.lv--1 { background: #c8eee5 !important; }
+.lv--2 { background: #7dd9c5 !important; }
+.lv--3 { background: $color-primary !important; color: #fff !important; }
+
+// ===== Items =====
+.item-group__empty {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  padding: $spacing-xs 0;
+}
+
+.item-row {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm 0;
+  border-top: 1px solid $color-border;
+
+  &__title {
+    flex: 1;
+    min-width: 0;
+    font-size: $font-size-base;
+    word-break: break-word;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+}
+
+// ===== Empty =====
+.empty-state {
+  .btn {
+    margin-top: $spacing-md;
+  }
+
+  &__sub {
+    margin-top: $spacing-md;
+    font-size: $font-size-xs;
+  }
+}
+
+// ===== Form parts =====
+.segmented {
+  display: flex;
+  gap: 6px;
+
+  &__btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: $radius-md;
+    background: $color-surface-2;
+    font-size: $font-size-sm;
+    font-weight: 700;
+    color: $color-text-muted;
+
+    &.is-active {
+      background: $color-primary;
+      color: #fff;
+    }
+  }
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: $spacing-sm;
+}
+
+.chip {
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: $color-surface-2;
+  font-size: $font-size-sm;
+  font-weight: 700;
+  color: $color-text-muted;
+
+  &.is-active {
+    background: $color-primary;
+    color: #fff;
+  }
+}
+
+.inline-number {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  font-size: $font-size-sm;
+  font-weight: 600;
+
+  input {
+    width: 96px;
+  }
+}
+
+.field input[type='number'],
+.field input[type='date'] {
+  padding: 10px $spacing-md;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background: $color-surface;
+  font-size: $font-size-base;
+  color: $color-text;
+}
+
+.field input[type='date'] {
+  width: 100%;
+  min-height: 44px;
+}
+
+.modal__sub {
+  font-size: $font-size-sm;
+  color: $color-text-muted;
+  margin-top: 2px;
+}
+
+.modal__delete {
+  margin-right: auto;
+}
+
+// ===== 画面下部の固定ボタン =====
+.about-btn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(20, 20, 26, 0.72);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 10px 18px;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+
+  svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+}
+
+// 追加ボタンは「ご意見」の真上に積む
+.fab {
+  position: fixed;
+  bottom: 88px;
+  right: 24px;
+  z-index: 1000;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: $color-primary;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba($color-primary, 0.45);
+
+  &:hover {
+    background: $color-primary-hover;
+  }
+}
+
+// トーストは固定ボタンより上に出す
+.toast {
+  bottom: 156px;
+}
