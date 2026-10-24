@@ -725,3 +725,92 @@
 .toast {
   bottom: 156px;
 }
+
+// ===== 大切な3つ（今日タブの先頭） =====
+.top3 {
+  margin-bottom: $spacing-md;
+  border-top: 4px solid $color-primary;
+
+  &__eyebrow {
+    font-size: $font-size-xs;
+    font-weight: 700;
+    color: $color-primary-ink;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: 800;
+    margin-bottom: $spacing-md;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-md;
+  }
+
+  &__rank {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: $color-primary;
+    color: #fff;
+    font-size: $font-size-sm;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: $spacing-sm;
+  }
+
+  &__name {
+    font-size: $font-size-lg;
+    font-weight: 800;
+  }
+
+  &__pct {
+    font-size: $font-size-lg;
+    font-weight: 800;
+    color: $color-primary-ink;
+  }
+
+  &__bar {
+    margin-top: 4px;
+    height: 8px;
+    border-radius: 999px;
+    background: $color-surface-2;
+    overflow: hidden;
+
+    span {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: $color-primary;
+    }
+  }
+
+  &__hint {
+    margin-top: 4px;
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+    line-height: 1.6;
+  }
+}
