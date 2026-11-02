@@ -15,6 +15,9 @@ import {
   rateOf, isAchieved, currentStreak, bestStreak, periodicInfo, sortPeriodic, PeriodicInfo,
 } from './stats';
 import { CareItem, DayLog, PeriodicItem, Timing } from './types';
+import { initClickTracking } from './analytics';
+
+initClickTracking();
 
 // ============================================================
 // DOM refs
