@@ -38,3 +38,24 @@ export function button(label: string, className: string, onClick: () => void): H
   b.addEventListener('click', onClick);
   return b;
 }
+
+/**
+ * 日本語入力の「変換確定のEnter」でフォームが送信されないようにする。
+ * Safari は確定のEnterで isComposing=false の keydown を送るため、
+ * keyCode 229 と compositionend 直後のEnterもあわせて止める。
+ */
+export function guardImeEnter(input: HTMLInputElement): void {
+  let composing = false;
+  let endedAt = 0;
+  input.addEventListener('compositionstart', () => { composing = true; });
+  input.addEventListener('compositionend', () => {
+    composing = false;
+    endedAt = Date.now();
+  });
+  input.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter') return;
+    if (composing || e.isComposing || e.keyCode === 229 || Date.now() - endedAt < 100) {
+      e.preventDefault();
+    }
+  });
+}

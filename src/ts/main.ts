@@ -1,6 +1,6 @@
 import { User } from 'firebase/auth';
 import { onAuthChange, loginWithGoogle, logout } from './auth';
-import { showToast, openOverlay, closeOverlay, textEl, button } from './ui';
+import { showToast, openOverlay, closeOverlay, textEl, button, guardImeEnter } from './ui';
 import { submitFeedback } from './feedback';
 import { todayKey, dateKey, labelOf, daysInMonth, hashString, parseKey } from './dates';
 import {
@@ -586,6 +586,10 @@ function closePeriodicModal(): void {
 }
 
 inputPeriodicInterval.addEventListener('input', renderIntervalChips);
+
+// 変換確定のEnterで保存されてしまわないようにする
+guardImeEnter(inputPeriodicTitle);
+guardImeEnter(inputItemTitle);
 
 periodicForm.addEventListener('submit', async (e) => {
   e.preventDefault();
