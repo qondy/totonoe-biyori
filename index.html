@@ -30,6 +30,8 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://totonoe-biyori.vercel.app/ogp.png">
+  <!-- ime-enter-guard: 日本語入力の変換確定のEnterで、フォーム送信やEnterキーの処理が動かないようにする（Safariは確定のEnterを keyCode 229 で送るため compositionend 直後も止める） -->
+  <script>(function(){var c=false,t=0;addEventListener('compositionstart',function(){c=true},true);addEventListener('compositionend',function(){c=false;t=Date.now()},true);addEventListener('keydown',function(e){if(e.key!=='Enter')return;if(!(c||e.isComposing||e.keyCode===229||Date.now()-t<100))return;var g=e.target;if(g&&(g.tagName==='INPUT'||g.tagName==='TEXTAREA'||g.isContentEditable)){e.preventDefault();e.stopImmediatePropagation()}},true)})();</script>
 </head>
 <body>
 
